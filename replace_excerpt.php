@@ -42,4 +42,14 @@ add_filter( 'get_the_excerpt', function( $excerpt, $post ) {
   	
 	return $excerpt;
 }, 10, 2 );
+
+// workaround to fix https://github.com/lightbulbheaduk/wordpress/issues/1
+// with thanks to https://github.com/frzsombor
+function fzs_filter_metadata_registration( $metadata ) {
+    if ($metadata['name'] === 'core/post-excerpt') {
+		unset($metadata['attributes']['excerptLength']);
+    }
+    return $metadata;
+};
+add_filter( 'block_type_metadata', 'fzs_filter_metadata_registration' );
 ?>
