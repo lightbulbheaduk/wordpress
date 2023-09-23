@@ -121,31 +121,6 @@ if (current_user_can('edit_posts')) {
     		
     		echo "<br>";
     		echo "<br>";
-
-        // TODO: for some reason this creates two duplicate tweets... have tried the following, but for some reason, this code deletes both tweets!
-      
-    		// Wait for 3 seconds, then delete duplicate tweet!  
-    		//sleep(3);
-		
-    		// with free access, can't use users endpoint, so use v1 endpoint
-    		//$connection->setApiVersion('1.1');
-    		
-    		//$content = $connection->get("account/verify_credentials");
-    				
-    		//var_dump($content);
-    		
-    		//$tweet_id = $content->status->id_str;
-    		//echo "<br>Found tweet ID " . $tweet_id;
-    		
-    		//$connection->setApiVersion('2');
-    		
-    		// Delete tweet 
-    		//$result = $connection->delete('tweets/' . $tweet_id);
-    		
-    		//echo $connection->getLastHttpCode();
-    		//var_dump($result);
-		
-		    echo "<a href='https://twitter.com/onebreadai'>Go on, delete that duplicate tweet</a>";
 	  }
 }
 ?>
